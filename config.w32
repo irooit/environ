@@ -1,0 +1,7 @@
+ARG_ENABLE('environ', 'environ support', 'no');
+
+if (PHP_ENVIRON != 'no') {
+	AC_DEFINE('HAVE_ENVIRON', 1, 'environ support enabled');
+
+	EXTENSION('environ', 'environ.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
